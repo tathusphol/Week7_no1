@@ -8,7 +8,14 @@ pipeline {
                 echo 'Start Program'
             }
         }
-
+        stage('read') {
+           steps {
+               script {
+                   def data = readFile(file: 'test.txt')
+                   echo data
+               }
+           }
+       }
         stage('Tigger the Slave Jobs') {
             steps {
                 echo 'Start Trigger to send name and age to slave'
