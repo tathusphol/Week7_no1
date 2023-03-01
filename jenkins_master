@@ -12,7 +12,7 @@ pipeline {
            steps {
                script {
                    def data = readFile(file: 'test.json')
-                   echo data
+                   echo data.Name
                }
            }
        }
